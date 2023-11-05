@@ -1,1 +1,1 @@
-Moderni računalni sustav - MATHOS
+Moderni računalni sustavi - MATHOS
