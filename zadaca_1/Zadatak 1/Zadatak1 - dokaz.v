@@ -10,8 +10,8 @@ Proof.
 Qed.
 
 Goal forall x y z : bool,
-  !(!x && y && z) || !(x && y && !z) || (x && !y && z)
-  = true.
+  !(!x && y && z) && !(x && y && !z) && (x && !y && z)
+  = (x && !y && z).
 Proof.
   now destruct x, y, z.
 Qed.

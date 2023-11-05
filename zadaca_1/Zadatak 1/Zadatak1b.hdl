@@ -3,6 +3,7 @@ CHIP Zadatak1b {
     OUT out;
 
     PARTS:
-    // result is always 1 (true)
-    Not(in = false, out = out);
+    Not(in=y, out=notY);
+    And(a=x, b=z, out=andAZ);
+    And(a=andAZ, b=notY, out=out);
 }
