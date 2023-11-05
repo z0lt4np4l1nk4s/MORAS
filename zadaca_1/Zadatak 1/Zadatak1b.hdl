@@ -1,0 +1,8 @@
+CHIP Zadatak1b {
+    IN x, y, z;
+    OUT out;
+
+    PARTS:
+    // result is always 1 (true)
+    Not(in = false, out = out);
+}

@@ -1,0 +1,61 @@
+//Works with both negative and positive numbers as well
+
+CHIP Less {
+    IN a[16], b[16];
+    OUT out;
+
+    PARTS:
+    //Retriving the MSBs for both inputs
+    Or(a=a[15], b=false, out=msbA);
+    Or(a=b[15], b=false, out=msbB);
+    Not(in=msbA, out=notMsbA);
+    Not(in=msbB, out=notMsbB);
+
+    //Making both numbers positive, if they are already positive we will simply ignore the calculations
+    Complement16(in=a, out=compA);
+    Complement16(in=b, out=compB);
+
+    //Selecting the results
+    Mux16(a=a, b=compA, sel=msbA, out=finalA);
+    Mux16(a=b, b=compB, sel=msbB, out=finalB);
+
+    //Checking if a and b are different
+    Xor16(a=a, b=b, out=diff);
+
+    //Subtracting a from b and then b from a
+    Subtract16(a=finalA, b=finalB, out=subAB);
+    Subtract16(a=finalB, b=finalA, out=subBA);
+
+    //Retreiving the subtractions MSBs
+    RetreiveMsb16(in=subAB, out=subABMsb);
+    RetreiveMsb16(in=subBA, out=subBAMsb);
+
+    //Checking which MSB will we need to take, to get the result
+    //res -> subBAMsb
+    And(a=msbA, b=msbB, out=res1);
+
+    //res -> true
+    And(a=msbA, b=notMsbB, out=res2);
+
+    //res -> false
+    And(a=notMsbA, b=msbB, out=res3);
+
+    //res -> subABMsb
+    And(a=notMsbA, b=notMsbB, out=res4);
+
+    Or(a=res1, b=res2, out=resBA);
+    Or(a=res3, b=res4, out=resAB);
+
+    //Selecting the result depending on the MSBs
+    Mux(a=subBAMsb, b=subABMsb, sel=resAB, out=res);
+
+    //If a and b's MSBs are different we already know the result
+    Or(a=res2, b=res3, out=res23);
+    And(a=res2, b=true, out=resA);
+    // Or(a=isRes2, b=false, out=resA);
+    Not(in=res23, out=notRes23);    
+
+    //Finally outputing the result
+    And(a=diff, b=notRes23, out=sel);
+    Mux(a=resA, b=res, sel=sel, out=out);
+}

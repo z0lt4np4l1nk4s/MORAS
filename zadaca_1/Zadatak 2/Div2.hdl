@@ -1,0 +1,36 @@
+//Works with both negative and positive numbers as well
+
+CHIP Div2 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+
+    //Retreiving the MSB that determines the sign of the number
+    Or(a=in[15], b=false, out=msb);
+
+    //Checking if the number is the smallest possible (-32768), because then we need to shift
+    //the bits on the original number and not on the complement
+    Or16Way(in[0..14]=in[0..14], out=isNotAllZero);
+    Not(in=isNotAllZero, out=isAllZero);
+
+    //If the number is a negative one we first convert it to a positive one
+    Complement16(in=in, out=compRes);
+
+    //Then we select the result whether the number is positive or negative
+    Mux16(a=in, b=compRes, sel=msb, out=res);    
+
+    //Shifting the bits, that is how we divide by 2 in binary
+    ShiftRight16(in=res, out=shiftRes);
+    ShiftRight16(in=in, out=origShiftRes);
+
+    //If the number was a negative one we have to convert it back to remain negative
+    Complement16(in=shiftRes, out=shiftComp);
+
+    //Selecting the final result
+    Mux16(a=shiftComp, b=origShiftRes, sel=isAllZero, out=shiftCompRes);    
+    Mux16(a=shiftRes, b=shiftCompRes, sel=msb, out=finalResult);
+
+    //Setting the MSB and returning the result
+    SetMsb16(in=finalResult, msb=msb, out=out);
+}

@@ -1,0 +1,8 @@
+CHIP SetMsb16 {
+    IN in[16], msb;
+    OUT out[16];
+
+    PARTS:
+
+    And16(a[0..14]=in[0..14], a[15]=msb, b=true, out=out);
+}

@@ -1,0 +1,27 @@
+//Chip for checking whether the inputs are the same or not
+CHIP Xor16 {
+    IN a[16], b[16];
+    OUT out;
+
+        PARTS:
+    Xor(a = a[0], b = b[0], out = res0);
+    Xor(a = a[1], b = b[1], out = res1);
+    Xor(a = a[2], b = b[2], out = res2);
+    Xor(a = a[3], b = b[3], out = res3);
+    Xor(a = a[4], b = b[4], out = res4);
+    Xor(a = a[5], b = b[5], out = res5);
+    Xor(a = a[6], b = b[6], out = res6);
+    Xor(a = a[7], b = b[7], out = res7);
+    Xor(a = a[8], b = b[8], out = res8);
+    Xor(a = a[9], b = b[9], out = res9);
+    Xor(a = a[10], b = b[10], out = res10);
+    Xor(a = a[11], b = b[11], out = res11);
+    Xor(a = a[12], b = b[12], out = res12);
+    Xor(a = a[13], b = b[13], out = res13);
+    Xor(a = a[14], b = b[14], out = res14);
+    Xor(a = a[15], b = b[15], out = res15);
+
+    Or16Way(in[0]=res0, in[1]=res1, in[2]=res2, in[3]=res3, in[4]=res4, in[5]=res5, 
+            in[6]=res6, in[7]=res7, in[8]=res8, in[9]=res9, in[10]=res10, in[11]=res11, 
+            in[12]=res12, in[13]=res13, in[14]=res14, in[15]=res15, out=out);
+}
