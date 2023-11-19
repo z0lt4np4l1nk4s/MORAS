@@ -1,0 +1,18 @@
+CHIP Log2 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    //Checking if the number is negative or not
+    And(a=in[15], b=true, out=msb);
+
+    //Counting the leading zeros
+    Clz(in=in, out=count);
+
+    //Subtracting the number of leading zeros from 15
+    Subtract16(a[0..3]=true, a[4..15]=false, b=count, out=res);    
+
+    //If the number is positive then we output the subtraction result
+    //othwersite -1
+    Mux16(a=res, b=true, sel=msb, out=out);
+}

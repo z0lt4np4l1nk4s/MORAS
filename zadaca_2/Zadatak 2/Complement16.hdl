@@ -1,0 +1,8 @@
+CHIP Complement16 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    Not16(in=in, out=notIn);
+    Add16(a=notIn, b[0]=true, b[1..15]=false, out=out);
+}
