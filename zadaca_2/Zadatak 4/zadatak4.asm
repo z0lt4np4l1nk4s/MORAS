@@ -535,7 +535,7 @@
 
         @SCREEN
         A = A + D;
-        M = M | 1;
+        M = M + 1;
 
         @32
         D = A;
@@ -544,7 +544,7 @@
         M = M + D;
         D = M;
 
-        @6182
+        @6118
         D = D - A;
 
         @VERT_LEFT_LOOP_END
@@ -588,7 +588,7 @@
 
 //HORIZONTAL BOTTOM LINE
 (HORIZ_BOTTOM_LINE)
-    @6150
+    @6118
     D = A;
 
     @SCREEN
@@ -606,7 +606,7 @@
         M = M + 1;
         D = M;
 
-        @22542
+        @22510
         D = D - A;
 
         @HORIZ_BOTTOM_LOOP_END
@@ -619,7 +619,7 @@
 
 //VERTICAL RIGHT LINE
 (VERT_RIGHT_LINE)
-    @2061
+    @2093
     D = A;
 
     @SCREEN
