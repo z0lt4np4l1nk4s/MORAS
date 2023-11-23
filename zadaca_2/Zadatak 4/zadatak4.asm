@@ -9,22 +9,24 @@
     @i
     M = D;
 
+    @k
+    M = 1;
+
+    @33
+    D = A;
+
+    @last_inc
+    M = D;
+
+    @MAIN_DRAW_LAST_RETURN
+    D = A;
+
+    @draw_last_return
+    M = D;
+
     (MAIN_DIAGONAL_LOOP_START)
-        //1
-        @i
-        A = M;
-        M = 1;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
+        @k
         D = M;
-
-        //2
-        @2
-        D = A;
 
         @i
         A = M;
@@ -34,235 +36,38 @@
         D = A;
 
         @i
-        M = M + D;
-        D = M;
+        MD = M + D;
 
-        //4
-        @4
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //8
-        @8
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //16
-        @16
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //32
-        @32
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //64
-        @64
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //128
-        @128
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //256
-        @256
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //512
-        @512
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //1024
-        @1024
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //2048
-        @2048
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //4096
-        @4096
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //8192
-        @8192
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //16384
-        @16384
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //32768
-        @32767
-        D = A;
-        D = D + 1;
-        D = -D;
-
-        @i
-        A = M;
-        M = D;
-
-        @33
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        @22200
+        @22480
         D = D - A;
 
         @MAIN_DIAGONAL_LOOP_END
         D; JGT
 
+        @16384
+        D = A;
+
+        @k
+        D = D - M;
+
+        @DRAW_LAST_START
+        D; JEQ
+
+        @k
+        D = M;
+        M = M + D;
+
+        (MAIN_DRAW_LAST_RETURN)
+
         @MAIN_DIAGONAL_LOOP_START
         0; JMP
+
     (MAIN_DIAGONAL_LOOP_END)
 (MAIN_DIAGONAL_END)
 
 //SIDE DIAGONAL
 (SIDE_DIAGONAL)
-    @2061
+    @6086
     D = A;
 
     @SCREEN
@@ -271,12 +76,25 @@
     @i
     M = D;
 
+    @31
+    D = A;
+
+    @last_inc
+    M = -D;
+
+    @SIDE_DRAW_LAST_RETURN
+    D = A;
+
+    @draw_last_return
+    M = D;
+
+    @k
+    D = 1;
+    M = D + 1;
+
     (SIDE_DIAGONAL_LOOP_START)
-        //-32768
-        @32767
-        D = A;
-        D = D + 1;
-        D = -D;
+        @k
+        D = M;
 
         @i
         A = M;
@@ -286,239 +104,32 @@
         D = A;
 
         @i
-        M = M + D;
-        D = M;
+        MD = M - D;
 
-        //16384
-        @16384
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //8192
-        @8192
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //4096
-        @4096
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //2048
-        @2048
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //1024
-        @1024
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //512
-        @512
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //256
-        @256
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //128
-        @128
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //64
-        @64
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //32
-        @32
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //16
-        @16
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //8
-        @8
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //4
-        @4
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //2
-        @2
-        D = A;
-
-        @i
-        A = M;
-        M = D;
-
-        @32
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        //1
-        @i
-        A = M;
-        M = 1;
-
-        @31
-        D = A;
-
-        @i
-        M = M + D;
-        D = M;
-
-        @22400
+        @18472
         D = D - A;
 
         @SIDE_DIAGONAL_LOOP_END
-        D; JGT
+        D; JLT
+
+        @16384
+        D = A;
+
+        @k
+        D = D - M;
+
+        @DRAW_LAST_START
+        D; JEQ
+
+        @k
+        D = M;
+        M = M + D;
+
+        (SIDE_DRAW_LAST_RETURN)
 
         @SIDE_DIAGONAL_LOOP_START
         0; JMP
+
     (SIDE_DIAGONAL_LOOP_END)
 (SIDE_DIAGONAL_END)
 
@@ -541,8 +152,7 @@
         D = A;
 
         @i
-        M = M + D;
-        D = M;
+        MD = M + D;
 
         @6118
         D = D - A;
@@ -572,8 +182,7 @@
         M = -1;
 
         @i
-        M = M + 1;
-        D = M;
+        MD = M + 1;
 
         @18446
         D = D - A;
@@ -603,8 +212,7 @@
         M = -1;
 
         @i
-        M = M + 1;
-        D = M;
+        MD = M + 1;
 
         @22510
         D = D - A;
@@ -642,8 +250,7 @@
         D = A;
 
         @i
-        M = M + D;
-        D = M;
+        MD = M + D;
 
         @22500
         D = D - A;
@@ -659,3 +266,28 @@
 (END)
 @END
 0; JMP
+
+//drawing the last point
+(DRAW_LAST_START)
+    @32767
+    D = A;
+    D = D + 1;
+    D = -D;
+
+    @i
+    A = M;
+    M = D;
+
+    @last_inc
+    D = M;
+
+    @i
+    M = M + D;
+
+    @k
+    M = 1;
+
+    @draw_last_return
+    A = M;
+    0; JMP
+(DRAW_LAST_END)
