@@ -127,4 +127,3 @@ class Parser:
 if __name__ == "__main__":
     Parser("zadatak3a")
     Parser("zadatak3b")
-    Parser("test")
