@@ -151,7 +151,7 @@ def _while_macro_end(self):
 
     return [
         f"@{variable}",
-        "MD=M-1",
+        "D=M",
         f"@{labelEnd}",
         "D; JEQ",
         f"@{labelStart}",

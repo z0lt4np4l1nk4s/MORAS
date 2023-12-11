@@ -43,6 +43,9 @@ $WHILE(i)
         $MV(j, max_ind)
 
         (SKIP_SET_NEW_MAX)
+
+        @j
+        M = M - 1;
     $END
 
     //calculating the indexes in memory
@@ -71,6 +74,9 @@ $WHILE(i)
     @arr_i
     A = M
     M = D
+
+    @i
+    M = M - 1;
 $END
 
 (END)
