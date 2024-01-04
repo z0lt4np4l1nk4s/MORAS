@@ -1,0 +1,32 @@
+function Max.max 3
+push argument 0
+push argument 1
+gt
+push argument 0
+push argument 2
+gt
+and
+if-goto MAX_FIRST
+
+push argument 1
+push argument 0
+gt
+push argument 1
+push argument 2
+gt
+and
+if-goto MAX_SECOND
+
+goto MAX_THIRD
+
+label MAX_FIRST
+push argument 0
+return
+
+label MAX_SECOND
+push argument 1
+return
+
+label MAX_THIRD
+push argument 2
+return

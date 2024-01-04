@@ -1,0 +1,7 @@
+function Div.div 2
+push argument 0
+push argument 1
+call DivMod.algorithm 2
+
+push temp 0
+return
