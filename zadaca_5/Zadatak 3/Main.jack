@@ -1,0 +1,13 @@
+class Main
+{
+    function void main()
+    {
+        var Draw d;
+
+        let d = Draw.new();
+
+        do d.draw();
+        
+        return;
+    }
+}

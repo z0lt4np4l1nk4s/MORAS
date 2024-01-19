@@ -1,0 +1,137 @@
+function Draw.new 0
+push constant 5
+call Memory.alloc 1
+pop pointer 0
+push constant 256
+pop this 0
+push constant 128
+neg
+pop this 1
+push constant 128
+pop this 2
+push constant 32
+neg
+pop this 3
+push constant 32
+pop this 4
+push pointer 0
+return
+function Draw.draw 2
+push argument 0
+pop pointer 0
+push pointer 0
+call Draw.drawGraph 1
+pop temp 0
+push this 3
+pop local 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+label WHILE_EXP0
+push local 0
+push this 4
+gt
+not
+not
+if-goto WHILE_END0
+push pointer 0
+push local 0
+push pointer 0
+push local 0
+call Draw.f 2
+call Draw.drawPoint 3
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Draw.drawGraph 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 2
+push constant 0
+push this 2
+push this 0
+push constant 1
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+push this 2
+push this 0
+push constant 1
+sub
+push this 2
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Draw.drawPoint 0
+push argument 0
+pop pointer 0
+push argument 2
+push this 3
+lt
+not
+push argument 2
+push this 4
+gt
+not
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 2
+push argument 1
+add
+push this 2
+push argument 2
+sub
+call Screen.drawPixel 2
+pop temp 0
+label IF_FALSE0
+push constant 0
+return
+function Draw.f2 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 64
+add
+return
+function Draw.f1 0
+push argument 0
+pop pointer 0
+push argument 1
+neg
+push constant 32
+sub
+return
+function Draw.f 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 0
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 1
+push constant 45
+add
+return
+label IF_FALSE0
+push argument 1
+neg
+push constant 45
+add
+return

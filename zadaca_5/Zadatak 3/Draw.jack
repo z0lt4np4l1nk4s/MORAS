@@ -1,0 +1,73 @@
+class Draw
+{
+    field int gridSize;
+    field int gridMin, gridMax;
+    field int minX, maxX;
+
+    constructor Draw new()
+    {
+        let gridSize = 256;
+        let gridMin = -128;
+        let gridMax = 128;
+        let minX = -32;
+        let maxX = 32;
+
+        return this;
+    }
+
+    method void draw()
+    {
+        var int x, y;
+        do drawGraph();
+
+        let x = minX;
+
+        do Screen.setColor(true);
+
+        while(~(x > maxX))
+        {
+            do drawPoint(x, f(x));
+            let x = x + 1;
+        }
+
+        return;
+    }
+
+    method void drawGraph()
+    {
+        do Screen.setColor(true);
+        do Screen.drawLine(gridMax, 0, gridMax, gridSize - 1);
+        do Screen.drawLine(0, gridMax, gridSize - 1, gridMax);
+
+        return;
+    }
+
+    method void drawPoint(int x, int y)
+    {
+        if(~(y < minX) & ~(y > maxX))
+        {
+            do Screen.drawPixel(gridMax + x, gridMax - y);
+        }
+
+        return;
+    }
+
+    method int f2(int x)
+    {
+        return x + 64;
+    }
+
+    method int f1(int x)
+    {
+        return -x - 32;
+    }
+
+    method int f(int x)
+    {
+        if(x < 0)
+        {
+            return x + 45;
+        }
+        return -x + 45;
+    }
+}
