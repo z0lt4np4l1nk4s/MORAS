@@ -128,14 +128,14 @@
           <symbol> ( </symbol>
           <expression>
             <term>
-              <unaryOp> ~ </unaryOp>
+              <symbol> ~ </symbol>
               <term>
                 <symbol> ( </symbol>
                 <expression>
                   <term>
                     <identifier> vx </identifier>
                   </term>
-                  <op> = </op>
+                  <symbol> = </symbol>
                   <term>
                     <integerConstant> 0 </integerConstant>
                   </term>
@@ -157,33 +157,33 @@
                     <term>
                       <identifier> x </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> vx </identifier>
                     </term>
-                    <op> &gt; </op>
+                    <symbol> &gt; </symbol>
                     <term>
                       <integerConstant> 0 </integerConstant>
                     </term>
                   </expression>
                   <symbol> ) </symbol>
                 </term>
-                <op> &amp; </op>
+                <symbol> &amp; </symbol>
                 <term>
                   <symbol> ( </symbol>
                   <expression>
                     <term>
                       <identifier> x </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> s </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> vx </identifier>
                     </term>
-                    <op> &lt; </op>
+                    <symbol> &lt; </symbol>
                     <term>
                       <integerConstant> 512 </integerConstant>
                     </term>
@@ -218,7 +218,7 @@
                     <term>
                       <identifier> x </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> vx </identifier>
                     </term>
@@ -252,14 +252,14 @@
           <symbol> ( </symbol>
           <expression>
             <term>
-              <unaryOp> ~ </unaryOp>
+              <symbol> ~ </symbol>
               <term>
                 <symbol> ( </symbol>
                 <expression>
                   <term>
                     <identifier> vy </identifier>
                   </term>
-                  <op> = </op>
+                  <symbol> = </symbol>
                   <term>
                     <integerConstant> 0 </integerConstant>
                   </term>
@@ -281,33 +281,33 @@
                     <term>
                       <identifier> y </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> vy </identifier>
                     </term>
-                    <op> &gt; </op>
+                    <symbol> &gt; </symbol>
                     <term>
                       <integerConstant> 0 </integerConstant>
                     </term>
                   </expression>
                   <symbol> ) </symbol>
                 </term>
-                <op> &amp; </op>
+                <symbol> &amp; </symbol>
                 <term>
                   <symbol> ( </symbol>
                   <expression>
                     <term>
                       <identifier> y </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> s </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> vy </identifier>
                     </term>
-                    <op> &lt; </op>
+                    <symbol> &lt; </symbol>
                     <term>
                       <integerConstant> 255 </integerConstant>
                     </term>
@@ -342,7 +342,7 @@
                     <term>
                       <identifier> y </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> vy </identifier>
                     </term>
@@ -401,21 +401,21 @@
                     <term>
                       <identifier> y </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> s </identifier>
                     </term>
                   </expression>
                   <symbol> ) </symbol>
                 </term>
-                <op> &lt; </op>
+                <symbol> &lt; </symbol>
                 <term>
                   <integerConstant> 255 </integerConstant>
                 </term>
               </expression>
               <symbol> ) </symbol>
             </term>
-            <op> &amp; </op>
+            <symbol> &amp; </symbol>
             <term>
               <symbol> ( </symbol>
               <expression>
@@ -425,14 +425,14 @@
                     <term>
                       <identifier> x </identifier>
                     </term>
-                    <op> + </op>
+                    <symbol> + </symbol>
                     <term>
                       <identifier> s </identifier>
                     </term>
                   </expression>
                   <symbol> ) </symbol>
                 </term>
-                <op> &lt; </op>
+                <symbol> &lt; </symbol>
                 <term>
                   <integerConstant> 511 </integerConstant>
                 </term>
@@ -467,7 +467,7 @@
                 <term>
                   <identifier> s </identifier>
                 </term>
-                <op> + </op>
+                <symbol> + </symbol>
                 <term>
                   <integerConstant> 1 </integerConstant>
                 </term>
@@ -517,7 +517,7 @@
             <term>
               <identifier> s </identifier>
             </term>
-            <op> &gt; </op>
+            <symbol> &gt; </symbol>
             <term>
               <integerConstant> 2 </integerConstant>
             </term>
@@ -549,7 +549,7 @@
                 <term>
                   <identifier> s </identifier>
                 </term>
-                <op> - </op>
+                <symbol> - </symbol>
                 <term>
                   <integerConstant> 1 </integerConstant>
                 </term>
@@ -636,7 +636,7 @@
                 <term>
                   <identifier> x </identifier>
                 </term>
-                <op> + </op>
+                <symbol> + </symbol>
                 <term>
                   <identifier> s </identifier>
                 </term>
@@ -646,7 +646,7 @@
                 <term>
                   <identifier> y </identifier>
                 </term>
-                <op> + </op>
+                <symbol> + </symbol>
                 <term>
                   <identifier> s </identifier>
                 </term>
@@ -695,14 +695,14 @@
           <symbol> ( </symbol>
           <expression>
             <term>
-              <unaryOp> ~ </unaryOp>
+              <symbol> ~ </symbol>
               <term>
                 <symbol> ( </symbol>
                 <expression>
                   <term>
                     <identifier> k </identifier>
                   </term>
-                  <op> = </op>
+                  <symbol> = </symbol>
                   <term>
                     <integerConstant> 81 </integerConstant>
                   </term>
@@ -721,7 +721,7 @@
                 <term>
                   <identifier> k </identifier>
                 </term>
-                <op> = </op>
+                <symbol> = </symbol>
                 <term>
                   <integerConstant> 0 </integerConstant>
                 </term>
@@ -783,7 +783,7 @@
                 <term>
                   <identifier> k </identifier>
                 </term>
-                <op> = </op>
+                <symbol> = </symbol>
                 <term>
                   <integerConstant> 90 </integerConstant>
                 </term>
@@ -810,7 +810,7 @@
                 <term>
                   <identifier> k </identifier>
                 </term>
-                <op> = </op>
+                <symbol> = </symbol>
                 <term>
                   <integerConstant> 88 </integerConstant>
                 </term>
@@ -837,7 +837,7 @@
                 <term>
                   <identifier> k </identifier>
                 </term>
-                <op> = </op>
+                <symbol> = </symbol>
                 <term>
                   <integerConstant> 131 </integerConstant>
                 </term>
@@ -851,7 +851,7 @@
                   <symbol> = </symbol>
                   <expression>
                     <term>
-                      <unaryOp> - </unaryOp>
+                      <symbol> - </symbol>
                       <term>
                         <integerConstant> 1 </integerConstant>
                       </term>
@@ -880,7 +880,7 @@
                 <term>
                   <identifier> k </identifier>
                 </term>
-                <op> = </op>
+                <symbol> = </symbol>
                 <term>
                   <integerConstant> 133 </integerConstant>
                 </term>
@@ -920,7 +920,7 @@
                 <term>
                   <identifier> k </identifier>
                 </term>
-                <op> = </op>
+                <symbol> = </symbol>
                 <term>
                   <integerConstant> 130 </integerConstant>
                 </term>
@@ -934,7 +934,7 @@
                   <symbol> = </symbol>
                   <expression>
                     <term>
-                      <unaryOp> - </unaryOp>
+                      <symbol> - </symbol>
                       <term>
                         <integerConstant> 1 </integerConstant>
                       </term>
@@ -963,7 +963,7 @@
                 <term>
                   <identifier> k </identifier>
                 </term>
-                <op> = </op>
+                <symbol> = </symbol>
                 <term>
                   <integerConstant> 132 </integerConstant>
                 </term>

@@ -7,8 +7,6 @@ KEYWORD = 'keyword'
 INT_CONST = 'integerConstant'
 STRING_CONST = 'stringConstant'
 KEYWORD_CONST = 'keywordConstant'
-OPERATOR = 'op'
-UNARY_OPERATOR = 'unaryOp'
 
 xml = True
 
@@ -551,7 +549,7 @@ class Compiler:
             if self._tokenizer.tokenType() != TK_SYMBOL or self._tokenizer.symbol() not in operators:
                 break
             
-            self._writeXML(OPERATOR, self._tokenizer.symbol())
+            self._writeXML(SYMBOL, self._tokenizer.symbol())
             self._nextToken()
 
             self._compileTerm()
@@ -594,7 +592,7 @@ class Compiler:
             self._nextToken()
 
         elif self._tokenizer.tokenType() == TK_SYMBOL and self._tokenizer.symbol() in '-~':
-            self._writeXML(UNARY_OPERATOR, self._tokenizer.symbol())
+            self._writeXML(SYMBOL, self._tokenizer.symbol())
             self._nextToken()
             self._compileTerm()
 
